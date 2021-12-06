@@ -49,6 +49,7 @@ image1=cv2.resize(image1,(0,0),fx=0.5,fy=0.5)
 image1=cv2.rotate(image1,cv2.ROTATE_90_CLOCKWISE)
 image1=cv2.rotate(image1,cv2.cv2.ROTATE_90_CLOCKWISE)   # previous rotation also accounted for this rotation appends to previous rotation
     # also here used cv2.cv2.ROTATE_90_CLOCKWISE , earlier used cv2.ROTATE_90_CLOCKWISE
+    # also available attributes ROTATE_180_CLOCKWISE , 180 ,270 etc
 
 
 # Writing image
