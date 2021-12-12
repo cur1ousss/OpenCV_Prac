@@ -5,7 +5,7 @@ capture=cv2.VideoCapture(0)
 
 while True:
     ret,frame=capture.read()
-    width=int(capture.get(3))
+    width=int(capture.get(3))   # capture.get() returns floating point width height hence convert to int for scaling better
     height=int(capture.get(4))
 
     # drawing lines
@@ -46,7 +46,7 @@ while True:
 
     cv2.imshow('capture',img)
     
-    print(f'widht{width} height{height}')
+    print(f'width{width} height{height}')
 
     if cv2.waitKey(1)==ord('q'):
         break
@@ -67,7 +67,7 @@ while True:
     width=int(capture.get(3))
     height=int(capture.get(4))
 
-    image=cv2.line(frame        ,   (0,0)     ,(width,height), (255,0,0)  ,10)
+    image=cv2.line(frame  ,   (0,0)     ,(width,height), (255,0,0)  ,10)
     image=cv2.line(image, (0,height) ,(width,0),(0,255,0),10)
 
 # for rectangle Pass Top left corner, bottom right corner, color , line thickness (-1 to fill, + int for boundary thickness ,(0 gives thin line boundary))
@@ -106,7 +106,7 @@ while True:
     # setting font
     font=cv2.FONT_HERSHEY_SIMPLEX
     image=image.putText(frame,'Tim is Great!',(200,height-10),font,4,(131,234,156), 5, cv2.LINE_AA)
-            # base image canvas,text, Bottom left corner location(center location) , font , fontScale(is relative magnification), color, line thickness, lineType cv2.LINE_AA    , optional argument for font 
+            # base image canvas{default frame or modified img},text, Bottom left corner location(center location) , font , fontScale(is relative magnification), color, line thickness, lineType cv2.LINE_AA    , optional argument for font 
 
     cv2.imshow('vidCapture',image)
     if cv2.waitKey(1)==ord('q'):
