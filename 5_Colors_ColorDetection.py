@@ -76,6 +76,11 @@ while True:
             # if pixel blue 1  &&  1  = 1
             #               0 && 0 =  0
             # blending image together using mask {since single image img1=img2 {src1=src2} }
+    # OBSERVATIONS (bitwise_and(arguments)):
+        # hsv hsv  idnty yes color orangish
+        # hsv frame idnty yes color greenish
+        # frame hsv idnty yes color greenish
+        # frame frame idnty yes prefecto blue
 
     cv2.imshow('frame',result)    # result image after mask
     cv2.imshow('Mask',mask)     # mask is array of 0 and 1 , above declration if inRange() then 1 otherwise value 0 of that pixel {so mask window appears black and white}
